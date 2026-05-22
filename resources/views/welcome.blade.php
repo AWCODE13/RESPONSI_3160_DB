@@ -99,7 +99,8 @@
     <div class="group bg-white rounded-3xl border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-300 overflow-hidden">
 
         <div class="relative overflow-hidden aspect-[3/4]">
-            <img src="https://placehold.co/200x600" alt="{{ $event->title }}"
+            <img src="{{ asset($event->poster_path) }}"
+     alt="{{ $event->title }}"
                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
 
             <div class="absolute top-4 left-4 px-3 py-1 bg-white/90 backdrop-blur rounded-lg text-xs font-bold uppercase text-indigo-600">
@@ -140,4 +141,41 @@
 
 </div>
     </section>
+
+    <!-- Partner Section -->
+<section class="max-w-7xl mx-auto px-6 py-20">
+
+    <div class="text-center mb-14">
+
+        <h2 class="text-4xl font-extrabold mb-4">
+            Didukung Oleh Partner Terpercaya
+        </h2>
+
+        <p class="text-slate-500 text-lg">
+            Platform AmikomEventHub bekerja sama dengan berbagai partner terbaik.
+        </p>
+
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+        @foreach($partners as $partner)
+
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 p-6 flex flex-col items-center group">
+
+            <img src="{{ $partner->logo_url }}"
+                 alt="{{ $partner->name }}"
+                 class="w-24 h-24 object-cover rounded-2xl mb-4 group-hover:scale-105 transition">
+
+            <h3 class="font-bold text-slate-800 text-center">
+                {{ $partner->name }}
+            </h3>
+
+        </div>
+
+        @endforeach
+
+    </div>
+
+</section>
 @endsection

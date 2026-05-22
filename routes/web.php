@@ -12,11 +12,14 @@ use App\Http\Controllers\PartnerController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/event/1', [EventController::class, 'show'])->name('events.show');
+Route::get('/event/{id}', [EventController::class, 'show'])
+    ->name('events.show');
 
-Route::get('/checkout', [EventController::class, 'checkout'])->name('checkout');
+Route::get('/checkout', [EventController::class, 'checkout'])
+    ->name('checkout');
 
-Route::get('/my-ticket', [TicketController::class, 'index'])->name('ticket');
+Route::get('/my-ticket', [TicketController::class, 'index'])
+    ->name('ticket');
 
 
 
@@ -44,5 +47,14 @@ Route::put('/partners/{id}', [PartnerController::class, 'update'])
 
 Route::delete('/partners/{id}', [PartnerController::class, 'destroy'])
     ->name('partners.destroy');
+
+    Route::post('/categories', [CategoryController::class, 'store'])
+    ->name('categories.store');
+
+Route::put('/categories/{id}', [CategoryController::class, 'update'])
+    ->name('categories.update');
+
+Route::delete('/categories/{id}', [CategoryController::class, 'destroy'])
+    ->name('categories.destroy');
 });
 

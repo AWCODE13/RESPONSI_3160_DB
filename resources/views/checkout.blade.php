@@ -3,7 +3,7 @@
 @section('content')
     <main class="max-w-3xl mx-auto px-6 py-20">
         <div class="mb-12">
-            <a href="{{ route('events.show') }}" class="text-indigo-600 font-bold flex items-center gap-2 mb-6">
+            <a href="{{ route('home') }}" class="text-indigo-600 font-bold flex items-center gap-2 mb-6">
                 <i class="fa-solid fa-chevron-left w-4 h-4"></i>
                 Kembali ke Event
             </a>
