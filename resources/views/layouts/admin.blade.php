@@ -73,13 +73,16 @@
             
 
         <!-- Logout -->
-        <div class="pt-6 border-t border-indigo-800">
-            <a href="/"
-                class="flex items-center gap-3 px-4 py-3 text-indigo-300 hover:text-white font-medium">
-                <i class="fa-solid fa-arrow-right-from-bracket w-5 h-5"></i>
-                Keluar
-            </a>
-        </div>
+        <form action="{{ route('admin.logout') }}" method="POST">
+    @csrf
+
+    <button 
+        type="submit"
+        class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
+    >
+        Logout
+    </button>
+</form>
 
     </aside>
 
