@@ -3,46 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin</title>
+    <title>Admin Login</title>
 
-    <!-- Tailwind CDN -->
+    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-    <div class="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md">
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-indigo-900">
 
-        <h1 class="text-3xl font-bold text-center text-blue-600 mb-6">
-            Login Admin
+    <div class="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-3xl shadow-2xl p-8">
+
+        <!-- Logo -->
+        <div class="flex justify-center mb-5">
+            <div class="w-20 h-20 rounded-full bg-white flex items-center justify-center shadow-lg">
+                <span class="text-3xl font-bold text-indigo-700">
+                    AE
+                </span>
+            </div>
+        </div>
+
+        <!-- Title -->
+        <h1 class="text-3xl font-bold text-center text-white mb-2">
+            Admin Login
         </h1>
-        @if ($errors->any())
-    <div class="bg-red-100 border border-red-300 text-red-700 px-4 py-3 rounded-lg mb-4">
-        {{ $errors->first() }}
-    </div>
-@endif
 
+        <p class="text-center text-gray-300 mb-8">
+            Welcome back to AmikomEventHub
+        </p>
+
+        <!-- Error -->
+        @if ($errors->any())
+            <div class="bg-red-500/20 border border-red-400 text-red-100 px-4 py-3 rounded-xl mb-5">
+                {{ $errors->first() }}
+            </div>
+        @endif
+
+        <!-- Form -->
         <form action="{{ route('admin.login.post') }}" method="POST" class="space-y-5">
 
             @csrf
 
             <!-- Email -->
             <div>
-                <label class="block mb-2 font-semibold text-gray-700">
-                    Email
+                <label class="block text-sm font-medium text-gray-200 mb-2">
+                    Email Address
                 </label>
 
                 <input 
                     type="email"
                     name="email"
-                    placeholder="Masukkan email"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="admin@amikom.ac.id"
+                    class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     required
                 >
             </div>
 
             <!-- Password -->
             <div>
-                <label class="block mb-2 font-semibold text-gray-700">
+                <label class="block text-sm font-medium text-gray-200 mb-2">
                     Password
                 </label>
 
@@ -50,17 +77,18 @@
                     type="password"
                     name="password"
                     placeholder="Masukkan password"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    class="w-full px-4 py-3 rounded-xl bg-white/20 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                     required
                 >
             </div>
-
+              
+            
             <!-- Button -->
             <button 
                 type="submit"
-                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+                class="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 rounded-xl transition duration-300 shadow-lg"
             >
-                Login
+                Login Sekarang
             </button>
 
         </form>
