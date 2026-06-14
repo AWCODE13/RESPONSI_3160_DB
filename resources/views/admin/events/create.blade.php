@@ -4,8 +4,10 @@
 <div class="p-6 max-w-4xl mx-auto">
     <h2 class="text-2xl font-bold mb-6 text-gray-800">Form Tambah Event</h2>
 
-    <form action="{{ route('admin.events.store') }}" method="POST"
-          class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-2">
+    <form action="{{ route('admin.events.store') }}" 
+      method="POST"
+      enctype="multipart/form-data"
+      class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 mt-2">
         @csrf
 
         <div class="mb-4">
@@ -50,6 +52,11 @@
                 <label class="block mb-2 font-medium text-gray-700">Kapasitas Stok</label>
                 <input type="number" name="stock"
                        class="w-full border border-gray-300 p-2.5 rounded" required>
+                       @error('price')
+    <p class="text-red-500 text-sm mt-1">
+        {{ $message }}
+    </p>
+@enderror
             </div>
         </div>
 
@@ -58,6 +65,19 @@
             <input type="text" name="location"
                    class="w-full border border-gray-300 p-2.5 rounded" required>
         </div>
+
+        <div class="mb-6">
+    <label class="block mb-2 font-medium text-gray-700">
+        Poster Event (Opsional)
+    </label>
+
+    <input 
+        type="file"
+        name="poster"
+        accept="image/*"
+        class="w-full border border-gray-300 p-2.5 rounded"
+    >
+</div>
 
         <div class="flex justify-end border-t pt-4">
             <button type="submit"

@@ -23,23 +23,29 @@ class EventController extends Controller
     return view('admin.events.create', compact('categories'));
 }   
 
-    public function store(\Illuminate\Http\Request $request)
+    public function store(Request $request)
 {
-    // Menerapkan validasi data request dari pengguna
     $data = $request->validate([
-        'category_id' => 'required',
+        'category_id' => 'required|exists:categories,id',
         'title' => 'required|string|max:255',
-        'description' => 'required|string',
+        'description' => 'nullable|string',
         'date' => 'required|date',
         'location' => 'required|string|max:255',
-        'price' => 'required|numeric',
-        'stock' => 'required|numeric'
+        'price' => 'required|numeric|min:0',
+        'stock' => 'required|numeric|min:1',
+        'poster' => 'nullable|image|max:2048'
     ]);
 
-    // Menyimpan data yang telah divalidasi ke dalam tabel menggunakan Model
+    if ($request->hasFile('poster')) {
+
+        $data['poster_path'] = $request->file('poster')
+            ->store('posters', 'public');
+    }
+
     \App\Models\Event::create($data);
 
-    return redirect()->route('admin.events.index')
+    return redirect()
+        ->route('admin.events.index')
         ->with('success', 'Data Event berhasil ditambahkan.');
 }
 
@@ -58,21 +64,35 @@ public function edit(Event $event)
     return view('admin.events.edit', compact('event', 'categories'));
 }
 
-public function update(\Illuminate\Http\Request $request, Event $event)
+public function update(Request $request, Event $event)
 {
     $data = $request->validate([
-        'category_id' => 'required',
+        'category_id' => 'required|exists:categories,id',
         'title' => 'required|string|max:255',
-        'description' => 'required|string',
+        'description' => 'nullable|string',
         'date' => 'required|date',
         'location' => 'required|string|max:255',
-        'price' => 'required|numeric',
-        'stock' => 'required|numeric'
+        'price' => 'required|numeric|min:0',
+        'stock' => 'required|numeric|min:1',
+        'poster' => 'nullable|image|max:2048'
     ]);
+
+    if ($request->hasFile('poster')) {
+
+        if ($event->poster_path) {
+
+            \Illuminate\Support\Facades\Storage::disk('public')
+                ->delete($event->poster_path);
+        }
+
+        $data['poster_path'] = $request->file('poster')
+            ->store('posters', 'public');
+    }
 
     $event->update($data);
 
-    return redirect()->route('admin.events.index')
-        ->with('success', 'Rincian data event berhasil diperbarui.');
+    return redirect()
+        ->route('admin.events.index')
+        ->with('success', 'Event berhasil diperbarui.');
 }
 }

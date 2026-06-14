@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 08, 2026 at 03:31 PM
+-- Generation Time: Jun 14, 2026 at 10:31 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.30
 
@@ -93,9 +93,10 @@ CREATE TABLE `events` (
 --
 
 INSERT INTO `events` (`id`, `category_id`, `title`, `description`, `date`, `location`, `price`, `stock`, `poster_path`, `created_at`, `updated_at`) VALUES
-(13, 1, 'Jazz Night 2025', 'Nikmati malam yang indah dengan alunan musik jazz', '2026-05-26 19:00:00', 'Amikom Baru2', 500000, 1000, 'assets/concert.png', '2026-04-20 03:00:00', '2026-05-11 08:34:00'),
-(14, 2, 'AI Summit & Expo 2026', 'Jelajahi tren terkini dalam bidang Artificial Intelligence', '2026-05-29 13:00:00', 'Ruang Cinema', 45000, 150, 'assets/hackathon.png', '2026-04-21 02:30:00', '2026-05-11 08:33:07'),
-(17, 3, 'Web Development Bootcamp', 'Bootcamp intensif untuk belajar fullstack web development', '2026-05-28 08:00:00', 'Amikom Baru - Lab Komputer', 150000, 50, 'assets/workshop.png', '2026-04-24 00:45:00', '2026-05-11 08:33:44');
+(13, 1, 'Jazz Night 2025', 'Nikmati malam yang indah dengan alunan musik jazz', '2027-05-26 19:00:00', 'Amikom Baru2', 500000, 100, 'posters/Ns6KnfkcWLIUEYshFic7MlAvu0GOZGxDoGxpLKAa.jpg', '2026-04-20 03:00:00', '2026-06-14 02:55:08'),
+(14, 2, 'AI Summit & Expo 2026', 'Jelajahi tren terkini dalam bidang Artificial Intelligence', '2027-05-29 13:00:00', 'Ruang Cinema', 45000, 150, 'posters/A2cDCHnC6igGv0xAM6n6tTj12Hn4ivvocbi6mIcz.jpg', '2026-04-21 02:30:00', '2026-06-14 02:52:00'),
+(17, 3, 'Web Development Bootcamp', 'Bootcamp intensif untuk belajar fullstack web development', '2027-05-28 08:00:00', 'Amikom Baru - Lab Komputer', 150000, 50, 'posters/Kb0vyqbAeorAKKgDIefxBsQGltUFyGcEgV6B5ZQw.jpg', '2026-04-24 00:45:00', '2026-06-14 02:51:43'),
+(22, 1, 'TeknoEvent', 'UI UX DESIGN TeknoEvent #ITIndonesia', '2027-05-14 19:15:00', 'AMIKOM 2 MAGUWO', 50000, 10000, 'posters/ies6HqinMyDquUO3Lg4qwjnnOTl26iCf8VN0LaTu.jpg', '2026-06-14 03:19:06', '2026-06-14 03:19:06');
 
 -- --------------------------------------------------------
 
@@ -230,10 +231,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('HtFWUizaLogeuksm9gyfGpWZtUx0SpJa5fJ64ixT', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiTVI3YlFYNWpEckVXMFluczZMcGNya2E4UDFKMjd2amIzNlNOZUtZdyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1779541233),
-('U9WRqrDu9dAfAXOMssRGUwgr3iDWFOR2NX588lpy', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSkh0YVpncmpVbXFoeEdIVTF1dE90OHRvdGlKYW1NNTMzVlA4QUZSMSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9wYXJ0bmVycyI7czo1OiJyb3V0ZSI7czo2OiJhZG1pbi4iO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1779463321),
-('UJzJ0jyOyPY5EbEBsRGDKlQigt9lpLiDg7bxSp82', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/148.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZGJuVWsyN0FWYmNLdTVVVktRdkNITGVEWHlCZmZYR3BqSzA4NUVpMyI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6Mjc6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbiI7czo1OiJyb3V0ZSI7czoxNToiYWRtaW4uZGFzaGJvYXJkIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1779543270),
-('YjmLYc1F1rH6Nu88lfgx3ZJXOLRMWnQSD6RkcJ8m', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.121.0 Chrome/142.0.7444.265 Electron/39.8.8 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiOUhoU2NxWmtmdUlUUnpWeURjN3dUZjFOVkRzcTBkSUw2WXpZTWV0SSI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1779460984);
+('MAcR9jMr5hTCgDZbD8xAgyrKOOgCe4kXazwC714s', 2, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoic0pUbkZBWWVPNEVMcWJ4NmlabnlzMkRYZ2w5cEk1dkRYeTFHazNWMiI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6NDE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9hZG1pbi9ldmVudHMvY3JlYXRlIjtzOjU6InJvdXRlIjtzOjE5OiJhZG1pbi5ldmVudHMuY3JlYXRlIjt9czozOiJ1cmwiO2E6MTp7czo4OiJpbnRlbmRlZCI7czoyNzoiaHR0cDovLzEyNy4wLjAuMTo4MDAwL2FkbWluIjt9czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1781432849),
+('w3s4nWPIJecjl1vv0A7amoCbqf2P7FDwJyjr2DZ3', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.123.0 Chrome/148.0.7778.97 Electron/42.2.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZjBOdDEwME1tQWhVTXk0VzRJMDJaQ0NQZXlJYmthQ3RYNnY2c21MMiI7czo5OiJfcHJldmlvdXMiO2E6Mjp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7czo1OiJyb3V0ZSI7czo0OiJob21lIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319fQ==', 1781427706);
 
 -- --------------------------------------------------------
 
@@ -273,7 +272,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `role`, `remember_token`, `created_at`, `updated_at`) VALUES
-(2, 'Admin Amikom', 'admin@amikom.ac.id', NULL, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9j7s8Gx5Yp6p3p4p7s9y7G', 'admin', NULL, '2026-04-29 17:19:54', '2026-04-29 17:19:54');
+(2, 'Admin Amikom', 'admin@amikom.ac.id', NULL, '$2y$12$XrtS3RLzx0Bq2ee1qw4kJeSK.v8Ln0SpGYG8jkSn7AaaEpXmIGkEe', 'admin', NULL, '2026-04-29 17:19:54', '2026-06-08 08:41:51');
 
 --
 -- Indexes for dumped tables
@@ -381,7 +380,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`

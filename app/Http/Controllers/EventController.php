@@ -8,12 +8,14 @@ use App\Models\Event;
 class EventController extends Controller
 {
     // DETAIL EVENT
-    public function show($id)
-    {
-        $event = Event::findOrFail($id);
+public function show(\App\Models\Event $event)
+{
+    // Mengambil daftar kategori untuk keperluan menu/footer
+    $categories = \App\Models\Category::all();
 
-        return view('event-detail', compact('event'));
-    }
+    // Kirim data event dan kategori ke view
+    return view('event-detail', compact('categories', 'event'));
+}
 
     // CHECKOUT
     public function checkout()
